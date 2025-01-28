@@ -242,6 +242,140 @@
             height: 100%;
             object-fit: cover;
         }
+
+        /* Projects Section */
+        .projects {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .projects h2 {
+            font-size: 2.5rem;
+            color: lime;
+            margin-bottom: 30px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            padding: 0 20px;
+        }
+
+        .project-card {
+            background: #FFB6C1;
+            border: 2px solid #dfc5fe;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            width: 100%;
+            margin-bottom: 1rem;
+            height: fit-content;
+            align-self: start;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background: #FF69B4;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 300px;
+            position: relative;
+        }
+
+        .carousel {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            background-color: #f5f5f5;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .carousel-images img.active {
+            opacity: 1;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 10;
+            transition: background 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel-btn.prev {
+            left: 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .carousel-btn.next {
+            right: 0;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .project-content h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            font-size: 0.9rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Specific tag colors */
+        .tag-3d-env { background-color: #4ecdc4; color: white; }
+        .tag-texturing { background-color: #ff6b6b; color: white; }
+        .tag-rendering { background-color: #45b7d1; color: white; }
+        .tag-3d-anim { background-color: #ff6b6b; color: white; }
+        .tag-3d-model { background-color: #4ecdc4; color: white; }
+        .tag-ar { background-color: #45b7d1; color: white; }
+        .tag-python { background-color: #ffd93d; color: black; }
+        .tag-vfx { background-color: #6c5ce7; color: white; }
+        .tag-materials { background-color: #a8e6cf; color: black; }
+        .tag-snap { background-color: #ffbe0b; color: black; }
+        .tag-blender { background-color: #ff8906; color: white; }
+        .tag-design { background-color: #e84393; color: white; }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -250,6 +384,7 @@
         <div class="links">
             <a href="#about" data-aos="fade-up">About</a>
             <a href="#skills" data-aos="fade-up">Skills</a>
+            <a href="#projects" data-aos="fade-up">Projects</a>
             <a href="#cv" data-aos="fade-up">CV</a>
         </div>
         <i class="fa-solid fa-bars hamburg"></i>
@@ -295,6 +430,138 @@
         </div>
     </section>
 
+    <section id="projects" class="projects">
+        <h2 data-aos="zoom-in">My Projects</h2>
+        <div class="projects-grid" data-aos="fade-up">
+            <!-- Project 1: Scary Corridor -->
+            <div class="project-card">
+                <div class="project-img">
+                    <div class="carousel">
+                        <button class="carousel-btn prev">❮</button>
+                        <button class="carousel-btn next">❯</button>
+                        <div class="carousel-images">
+                            <img src="images/ScaryCorridorScreenshot1.png" alt="Project Screenshot 1" class="active">
+                            <img src="images/ScaryCorridorScreenshot2.png" alt="Project Screenshot 2">
+                            <img src="images/ScaryCorridorScreenshot3.png" alt="Project Screenshot 3">
+                        </div>
+                        <div class="carousel-dots"></div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Scary Corridor | Blender</h3>
+                    <div class="description-container">
+                        <p class="project-brief">------------------------------------------------</p>
+                        <p class="project-full-brief hidden">An enviornemental scene created on blender, with uses of different textures. I made the different meshes within the scene and I'm hoping I'll be able to input this into a game</p>
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                    <div class="tags">
+                        <span class="tag tag-3d-env">3D Environment</span>
+                        <span class="tag tag-texturing">Texturing/UV Unwrapping</span>
+                        <span class="tag tag-rendering">Rendering</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Cozy Sands -->
+            <div class="project-card">
+                <div class="project-img">
+                    <div class="carousel">
+                        <button class="carousel-btn prev">❮</button>
+                        <button class="carousel-btn next">❯</button>
+                        <div class="carousel-images">
+                            <img src="images/cozysands3.png" alt="Cozy Sands Screenshot" class="active">
+                            <img src="images/cozysands1.gif" alt="Cozy Sands Animation 1">
+                            <img src="images/cozysands2.gif" alt="Cozy Sands Animation 2">
+                            <img src="images/cozysands4.png" alt="Cozy Sands Screenshot">
+                            <img src="images/cozysands5.png" alt="Cozy Sands Screenshot">
+                        </div>
+                        <div class="carousel-dots"></div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Cozy Sands SC Lens (My Role 3D Modeling/Animation + VFX)</h3>
+                    <div class="description-container">
+                        <p class="project-brief">------------------------------------------------</p>
+                        <p class="project-full-brief hidden">Developed an AR experience on Snapchat that explores and amplifies the voices for better mental health. This interactive experience was designed to engage users, raise awareness, and develop better coping habits<br><br>My Role: I did the 3D meshes of the entire island, as well as the penguin mascot and the animation for it. While also creating the different materials and effects within the different interactions of the front and back camera</p>
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                    <div class="tags">
+                        <span class="tag tag-3d-anim">3D Animation</span>
+                        <span class="tag tag-3d-model">3D Modeling</span>
+                        <span class="tag tag-ar">Augmented Reality</span>
+                        <span class="tag tag-python">Python Scripting</span>
+                        <span class="tag tag-vfx">VFX</span>
+                        <span class="tag tag-materials">Custom Materials</span>
+                        <span class="tag tag-snap">SnapLensStudio</span>
+                        <span class="tag tag-blender">Blender</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://docs.google.com/presentation/d/1eVOKZvBGoZlF4fCEj_Fs6WPOBGqTD2Bc/edit?usp=sharing&ouid=108641822402341642205&rtpof=true&sd=true" target="_blank" class="btn">View Project Slides</a>
+                        <a href="https://docs.google.com/presentation/d/1q-d6HUjtQsvzuQcKqQGhsSCn28eTd7fB2e6MD8q4BR0/edit?usp=sharing" target="_blank" class="btn btn-outline">View Case Study</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Leopard Lens -->
+            <div class="project-card">
+                <div class="project-img">
+                    <div class="carousel">
+                        <button class="carousel-btn prev">❮</button>
+                        <button class="carousel-btn next">❯</button>
+                        <div class="carousel-images">
+                            <img src="images/catssnapchat.gif" alt="Leopard Lens Demo" class="active">
+                            <img src="images/snapcodecatlens.png" alt="Snapcode">
+                            <img src="images/snapchatcatinsight.png" alt="Lens Insights">
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Leopard Snap Chat Lens</h3>
+                    <div class="description-container">
+                        <p class="project-brief">------------------------------------------------</p>
+                        <p class="project-full-brief hidden">Snapchat Lens I created on lens studio. Which recognizes the users facial features and adds different cat features to them. Reached 119k total users for the Lens.</p>
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                    <div class="tags">
+                        <span class="tag tag-design">Design</span>
+                        <span class="tag tag-ar">Augmented Reality</span>
+                        <span class="tag tag-snap">SnapLensStudio</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Face Morph -->
+            <div class="project-card">
+                <div class="project-img">
+                    <div class="carousel">
+                        <button class="carousel-btn prev">❮</button>
+                        <button class="carousel-btn next">❯</button>
+                        <div class="carousel-images">
+                            <img src="images/facemorphsnapgif.gif" alt="Face Morph Demo" class="active">
+                            <img src="images/facemorphcode.png" alt="Face Morph Snapcode">
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Face Morph SnapChat Lens</h3>
+                    <div class="description-container">
+                        <p class="project-brief">------------------------------------------------</p>
+                        <p class="project-full-brief hidden">Snapchat lens that directly morphs the users face ones they open their mouth as well as a sparkles VFX that shows up once the morphing is activated. I used SnapLensStudio as well as Blender.</p>
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                    <div class="tags">
+                        <span class="tag tag-ar">Augmented Reality</span>
+                        <span class="tag tag-snap">SnapLensStudio</span>
+                        <span class="tag tag-blender">Blender</span>
+                        <span class="tag tag-vfx">VFX</span>
+                        <span class="tag tag-python">Scripting (Python)</span>
+                        <span class="tag tag-design">Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="cv" class="cv">
         <h2 data-aos="fade-up">My Resume</h2>
         <div class="cv-item" data-aos="fade-left">
@@ -327,5 +594,54 @@ Final Project: Led a team in the creation of our Javascript Calculator project: 
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>AOS.init();</script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const carousels = document.querySelectorAll('.carousel');
+        
+        carousels.forEach(carousel => {
+            const images = carousel.querySelectorAll('.carousel-images img');
+            const prevBtn = carousel.querySelector('.prev');
+            const nextBtn = carousel.querySelector('.next');
+            let currentIndex = 0;
+
+            // Function to update active image
+            function showImage(index) {
+                images.forEach(img => img.classList.remove('active'));
+                images[index].classList.add('active');
+            }
+
+            // Previous button click
+            prevBtn.addEventListener('click', () => {
+                currentIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+                showImage(currentIndex);
+            });
+
+            // Next button click
+            nextBtn.addEventListener('click', () => {
+                currentIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+                showImage(currentIndex);
+            });
+        });
+
+        // Read More functionality
+        document.querySelectorAll('.read-more-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const container = this.parentElement;
+                const brief = container.querySelector('.project-brief');
+                const fullBrief = container.querySelector('.project-full-brief');
+                
+                if (fullBrief.classList.contains('hidden')) {
+                    brief.style.display = 'none';
+                    fullBrief.classList.remove('hidden');
+                    this.textContent = 'Read Less';
+                } else {
+                    brief.style.display = 'block';
+                    fullBrief.classList.add('hidden');
+                    this.textContent = 'Read More';
+                }
+            });
+        });
+    });
+    </script>
 </body>
 </html>
